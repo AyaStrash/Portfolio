@@ -1,0 +1,337 @@
+=========================================================================
+Tempora LGC Unicode font package
+version 0.2 (October 26, 2005)
+
+Copyright (c) 2005 Alexej Kryukov <alexios@thessalonica.org.ru>.
+
+This font is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+As a special exception, permission is granted to include these font
+programs in a Postscript or PDF file that consists of a document that
+contains text to be displayed or printed using these fonts, regardless
+of the conditions or license applying to the document itself.
+
+This font is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+Abstract
+~~~~~~~~
+
+Tempora LGC Unicode is a font family, designed to provide a free  typeface
+suitable for word processing in languages which use 3 European alphabets:
+Latin, Greek and Cyrillic. It may be especially useful for philologists
+(mainly slavists and classicists), since it supports historical Cyrillic
+letters available in the Unicode standard (including letters used in
+Russian  pre-1918 orthography) as well as all accented combinations and
+additional characters needed for fully accented Greek (both classical and
+modern). Tempora LGC Unicode is a "smart" font, intended to demonstrate
+nicities of the OpenType technologie, applicable to European scripts.
+
+Formats and packages
+~~~~~~~~~~~~~~~~~~~~
+
+The Tempora LGC Unicode family is available in several formats, so that
+before downloading fonts you should consider with wich software you are
+planning to use them:
+
+-- OpenType fonts with PostScript outlines (the nimbus-lgc.*.otf.zip file).
+Downloading this package is recommended, if your software can take
+advantage of OpenType tables, or at least can deal with *.otf font format
+at all. Microsoft Word 2003 and Adobe InDesign are good examples of such
+applications.
+
+You can install OTF fonts also in Unix-like systems (since this format is
+supported by the FreeType library), but you should be aware of the problems
+you may face here. Unfortunately, currently there are just no X11
+applications, which would be able to take advantage of OpenType nicities.
+Moreover, most applications are even unable to access OpenType kerning
+information (stored in GPOS tables). Desktop publishing  system Scribus is
+the only exception I am aware of: this program can handle OpenType kerning,
+but still provides no support for other OpenType features. However, the
+worst thing is that OpenOffice.org (the most powerful free office suite)
+currently doesn't support OTF fonts at all.
+
+-- TrueType fonts (the nimbus-lgc.*.ttf.zip file). These fonts will
+probably look poor on screen, so that you have to enable font antialiasing
+in your system settings (both for MS Windows and Unix/X11) in order to use
+them. Download this package only of your software doesn't support Open Type
+fonts with postscript outlines (like e. g. OpenOffice.org for Unix-like
+systems or any MS Word version earlier than 2003). 
+
+-- FontForge sources (the nimbus-lgc.*.src.zip file). Download this
+package only if you have the FontForge font editor and know how to
+use it.
+
+Open Type support
+~~~~~~~~~~~~~~~~~
+
+Unlike most other fonts with a similar character coverage, Tempora LGC 
+Unicode is a "smart" fonts, which utilises various features of the OpenType
+technologie in order to simplify the work of philologists, especially
+slavists and Greek scholars.
+
+Unfortunately, currently  there are very few applications which can really
+use Open Type tables for typesetting Western scripts, and, even worse,
+different software vendors may support different sets of Open Type
+features in their applications. So, all advanced features available in the
+Tempora LGC Unicode family practically may be separated into 3 groups:
+
+1) features supported by MS Uniscribe (and so accessible in applications
+which use Uniscribe, like MS Word 2003 and other MS Office 2003
+applications). This group includes "smart" accent positioning as well as
+automatical composition of accented characters (in case there is a
+precomposed character corresponding to a combination of a character with
+combining diacritical mark(s), typed by user);
+
+2) features supported by Adobe InDesign. This group includes standard
+rules for substitution of Latin ligatures (like "fi" or "fl") or vulgar
+fractions, which are present in most OpenType fonts (e. g. from Adobe).
+Tempora LGC Unicode also uses the "calt" feature to automatically replace
+standard Greek beta (with descender) with the curly form of the glyph in
+the middle of the word, as it is required by French rules for typesetting
+Greek;
+
+3) features, which currently no software may take advantage of. The most
+important of such features is "locl" (i. e. substitution of localized
+forms, depending from the current text language). This feature might be
+especially important for typesetting Serbian (using the Cyrillic alphabet),
+since in Serbian typography some Cyrillic  letters traditionally have a
+specific form, different e. g. from their Russian couterparts. I hope the
+situation will change and this feature will be supported by future
+versions of software.
+
+I know very few about Mac OS, but I suppose some features from the first 2
+groups should also work in some applications on Mac OS X "Tiger". I would
+be very grateful if somebody can test my fonts on the Mac platform. 
+
+Unfortunately, I am not aware of any free OpenType renderers (e. g. for
+Linux/X11 platform), which would be able to provide access to advanced
+typography  features for Western scripts. Again, I hope the situation will
+change in  future.
+
+Sources and history
+~~~~~~~~~~~~~~~~~~~
+
+Although the Tempora LGC Unicode typeface contains many originally designed
+glyphs, its main part is still based on some well known sources, also
+available under free licenses. These sources include:
+
+1) The free Nimbus Roman No 9 L font family, released by URW and now
+distributed with Ghostscript;
+
+2) The Omega Serif family by Yannis Haralambous, designed as a default
+font for his Omega typesetting system;
+
+3) Cyrillic glyphs for Nimbus Roman No 9 L, designed bt Valek Filippov
+(see ftp://ftp.gnome.ru/fonts/);
+
+4) The FreeSerif font family from FreeFont project, started by Primoz
+Peterlin (see http://savannah.nongnu.org/download/freefont/), and now
+developed at alioth.debian.org (http://alioth.debian.org/projects/freefont/).
+
+URW Nimbus Roman No 9 L for a long time was the only free Latin
+Times-styled font of reasonable quality, so that it is often used as a
+default serif font in Linux/BSD distributions and many free programs.
+Nevertheless, it is less perfect than its counterpart from Adobe (i. e.
+Adobe Times): I even have an impression that its glyph outlines were, at
+least partially, produced by an autotracing tool, and no cleanup was
+performed. So, although nothing was changed in the design of Latin glyphs
+taken from this font, in most cases I had to perform a cosmetical cleanup
+of outlines. Some glyphs were just replaced with their counterparts from
+Omega Serif, which have almost the same shape, but a slightly better
+technical implementation. I have also corrected kerning and sidebearings
+for some letters (in particular, in order to prevent overlap of serifs in
+combinations like "KA" or "RA" in italic fonts).
+
+Omega Serif was also used as a source of some supplementary characters
+(like additional Latin ligatures), but, of course, mainly of Greek glyphs.
+However, lots of corrections have been made before I was satisfied with the
+Greek part of my font. The most obvious reason for modifications was the
+fact that, although the Omega Serif Greek family has almost perfect glyph
+outlines, it looks like the fonts were abandoned half-finished (like the
+whole Omega project, which, unfortunately, seems to be half-dead now). Some
+(relatively easy to design) glyphs are present only in regular version of
+the font, but not in bold and italic shapes. For example, I had to design
+myself the capital Koppa (U+03DE) for all versions but regular. The fonts
+also contained no precomposed accented combinations (because in the Omega
+typesetting system virtual fonts are used to combine different elements of
+accented glyphs together).
+
+On the other hand, I was not satisfied with the shapes of Omega Serif Greek
+glyphs, mainly because the original Greek font by Yannis Haralambous looks
+quite similar to well-known Linotype Times Ten family. There are already
+several Unicode Greek fonts which follow this design: in particular I can
+mention the Times font distributed with Mac OS X, as well as MgOld Times UC
+Pol (now also known as MgOpenCanonica) by Magenta company, and GalatiaSIL
+by SIL International. Some of these fonts are available for free. So I
+decided to make the Greek part of my font more original. When searching for
+a suitable example, I realized that Greek letters, used in some Soviet
+books in combination with Cyrillic Obyknovennaya Novaya typeface, have many
+common features with Times Ten Greek, but more "classical" look. In fact,
+there is nothing strange in this similarity, because most Greek typefaces
+traditionally used both in Russian and German printing (including Times
+Ten) descend to the famous Greek font used in Teubner classical library. So
+I modified most Greek letters, making them closer to Greek Obyknovennaya
+Novaya (or directly to the Teubner font for Italic versions), but still
+trying to keep their design compatible with the rest of the font. Moreover,
+I had to redesign Greek letters in Italic and Bold  Italic fonts almost
+completely in order to correct the initially wrong average small letter
+height, which didn't correspond to the xheight of the Latin fonts.
+
+Initially I had not planned to modify Cyrillic glyphs by Valek Filippov,
+but finally realized, that some glyph shapes were absolutely not acceptable
+for me. So, redesigning Cyrillic glyphs became actually the hardest part of
+the whole work. I am still not fully satisfied with the result, but I am
+sure it is better than the initial version. Since I already started
+redesigning Cyrillic glyphs, I decided to add also historical Cyrillic
+letters, which were not present in Valek's fonts, in order to make
+the whole family more useful for slavists.
+
+Except correcting glyph shapes itself, I had to spend some time adjusting
+kerning between Greek and Cyrillic letters. So Tempora LGC, unlike Omega
+Serif or Nimbus Roman No 9 L modified by Valek Filippov, has some basic
+kerning information for Greek and Cyrillic scripts, which (I hope) will
+make it more useful for word processing in the corresponding languages.
+
+The fourth source of Tempora LGC Unicode was FreeSerif from the Freefont
+project. In fact, FreeSerif is very similar to Tempora LGC at some points,
+because it is based on the same sources, although includes a lot of glyphs
+added later. That's why before starting my own project I considered forking
+FreeSerif instead. However, the main problem was, that the FreeFont 
+project tends to support a maximum possible number of scripts and Unicode
+ranges, unfortunately, without sufficient attention to each particular
+script. So finally I realized that FreeSerif has too many flaws in its
+Greek and Cyrillic parts, so that it would be really too difficult to 
+wast my time fixing them. For example:
+
+-- Cyrillic letters are oversized. For example, Cyrillic "A" is
+significantly larger than Latin "A", although normally it should be
+implemented just as a reference to the later;
+
+-- Some useful Greek glyphs, initially present in Omega Serif, were either
+completely abandoned, or replaced with newly designed glyphs with much
+uglier shape (that is the case for capital Stigma, U+03E0);
+
+-- Greek capital accented letters (especially those with iota adscript)
+are completely unusable due to wrong sidebearings (which cause e. g.
+iota adscript to be overstruck with the next character).
+
+Of course, the fonts contain no kerning information for Greek and
+Cyrillic scripts.
+
+On the other hand, FreeSerif includes some really useful and well-designed
+characters, added by its developers. So, although I couldn't completely
+base my font on FreeSerif, I used it as a source of some glyphs, like
+vulgar fractions or musical signs.
+
+Greek glyphs implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this paragraph I am trying to describe several situations where accented
+Greek glyphs, defined in Unicode, can be designed by various ways, and the
+decisions I finally made in these cases.
+
+First, anybody who often deals with Unicode Greek knows that Unicode
+includes a set of accented vowels with Greek tonos (primarily intended for
+use in monotonic Greek), and another set of similar combinations with
+Greek acute (oxia). Omega Serif also includes both a special tonos (which
+have a vertical shape) and an acute accent. However, Yannis Haralambous
+himself now states in his articles that monotonic tonos is actually the
+same accent as polytonic oxia, and so they should have exactly the same
+shape. That's why he recommends to always use "monotonic" combinations
+with tonos even for classical Greek (which, of course, would be impossible
+with any fonts which have a "vertical" tonos). I think, this position has
+very good reasons, and so I haven't included vertical tonos into my font,
+so that both the combinations with tonos from the basic Greek Unicode block
+and the combinations with oxia from the extended Greek block have exactly the
+same shape and actually refer to the same glyphs.
+
+Greek circumflex is another diacritical mark which often becomes a matter
+of discussions. I know, that some (mostly English and American) classicists
+prefer porsonic (lunate) circumflex, similar to inverted breve, mainly
+because this form is characteristic of most Greek fonts traditionally used
+in English and American typography. So, although Times Ten itself has
+tilde-shaped  circumflex, in some Greek fonts which mostly follow its
+design this form is replaced with the lunate version. To my mind, this
+modification is quite inappropriate, because, as I have explained above,
+this type of Greek Times descends to German typefaces of 19th century, and
+so it should follow the traditions of continental European typography,
+where tilde-shaped circumflex was always preferred. Of course this reason
+is especially actual for my font, which stands even closer to the prototype
+(i. e. the Teubner typeface), when Times Ten does. So, don't  ask me to
+implement a version with "porsonic" circumflex: I shan't.
+
+Combinations of Greek vowels with "mute" iota, defined in Unicode, is one
+more important group of glyphs, which may be designed by various ways,
+depending from a font designer's preferences. Most ancient Greek language
+manuals say that mute iota (called iota subscript) is written below
+lowercase letters, but after uppercase vowels it should be replaced with
+regular small iota, written inline and so called iota adscript. Currently
+most Unicode Greek fonts follow this convention, and many classicists even
+suppose any over implementations of capital combinations with mute iota to
+be illegal.
+
+However, iota subscript below capital letters also may occur in some
+editions. In particular, this orthography is very common for liturgical
+books of the Greek Orthodox church. Particularly I prefer this typographic
+tradition, not only because it is inherited from fine Greek typography of
+the past centuries, but also for the following reason. If mute iota is
+designed as a regular iota and printed inline, it should behave as a
+separate character. This means that, when letterspacing for the surrounding
+text is changed, the distance between the iota and the preceding vowel
+should be scaled too. Of course this is impossible if both characters are
+implemented as a single glyph.
+
+That's why in Tempora LGC Unicode mute iota is implemented as iota
+subscriptum in all accented combinations with capital vowels. Note that 
+*unaccented* capital vowels with mute iota represent a special case: unlike
+their accented counterparts, they are used in upper case only, i. e. may
+occur only in a fully capitalized text. So for these glyphs (namely,
+Unicode characters U+1FBC, U+1FCC, U+1FFC) I have chosen a special version
+of iota adscript (alrady present in the original fonts by Yannis
+Haralambous), which is similar to full-sized *capital* Iota, but has a
+smaller hight. To my mind, this shape will better match to the design of
+surrounding capital glyphs.
+
+Such an implementation of capital vowels with mute iota has nothing wrong
+by itself, but, of course, it would be nice to allow replacing each of
+affected Unicode codepoints with a pair of glyphs: the vowel itself and a
+regular iota. Theoretically, this can be done by applying an OpenType
+feature, but, unfortunately, I am not aware of any suitable OpenType
+feature, which:
+
+-- can be used for replacing a single glyph with two or more glyphs, as in
+our case;
+
+-- can be disabled if user don't like it.
+
+So for now I can't provide an alternative for the implementation which
+looks preferred for me. If you absolutely don't like capital vowels with
+iota subscript, at least you can always type regular iota as a separate
+character.
+
+Thanks
+~~~~~~
+
+I would like to thank:
+
+-- George Williams for his excellent FontForge program
+(http://fontforge.sourceforge.net), and especially for his responsiveness
+in fixing bugs and adding new features. Without his help this package
+would never be released!
+
+-- Tavmjong Bah (Tav), who kindly granted me his Perl scripts (originally
+written for his Arev fonts, see http://tavmjong.free.fr/FONTS/) used to
+convert separate kerning pairs defined in a FontForge source file into
+kerning classes.
+
+=========================================================================
